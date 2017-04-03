@@ -16,6 +16,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomasr/molokai'
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 call plug#end()
 
@@ -31,8 +32,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='durant'
 
-colorscheme molokai
+colorscheme slate
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
-autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ --print-width\ 100
+autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ all\ --print-width\ 100
