@@ -6,6 +6,7 @@ set expandtab
 set number
 set cursorline
 set showcmd
+set colorcolumn=100
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rust-lang/rust.vim'
@@ -29,7 +30,6 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='durant'
 
-colorscheme slate
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ all\ --print-width\ 100
