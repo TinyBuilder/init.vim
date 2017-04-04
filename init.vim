@@ -14,17 +14,15 @@ Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomasr/molokai'
-Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+let g:ale_linters = { 'javascript': ['eslint'] }
+
+let g:deoplete#enable_at_startup = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
@@ -35,3 +33,5 @@ colorscheme slate
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 autocmd FileType javascript.jsx,javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ all\ --print-width\ 100
+autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
+autocmd BufWritePre *.jsx exe "normal! gggqG\<C-o>\<C-o>"
