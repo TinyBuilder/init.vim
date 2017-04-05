@@ -1,24 +1,26 @@
 filetype plugin indent on
 syntax enable
+set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set number
 set cursorline
 set showcmd
-set colorcolumn=100
+colorscheme slate
+set colorcolumn=101
+highlight ColorColumn ctermbg=235
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/nvim-cm-tern', {'do': 'npm install'}
 call plug#end()
 
 let g:ale_linters = { 'javascript': ['eslint'] }
