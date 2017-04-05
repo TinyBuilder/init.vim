@@ -21,6 +21,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern', {'do': 'npm install'}
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let g:ale_linters = { 'javascript': ['eslint'] }
