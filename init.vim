@@ -11,6 +11,13 @@ colorscheme slate
 set colorcolumn=101
 highlight ColorColumn ctermbg=235
 
+"Install Vim Plug if not installed.
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -flo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
