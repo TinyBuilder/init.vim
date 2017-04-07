@@ -16,6 +16,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tomasr/molokai'
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 call plug#end()
 
